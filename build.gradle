@@ -1,0 +1,39 @@
+plugins {
+    id 'java'
+}
+
+group 'APITesting'
+version '1'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    log4JVersion="1.2.17"
+    testNGVersion="6.14.3"
+    restAssuredVersion="4.1.2"
+}
+
+dependencies {
+   compile(
+           [group: "log4j", name: "log4j", version: "$log4JVersion"],
+           [group: 'org.testng', name: 'testng', version: "$testNGVersion"],
+           [group: 'io.rest-assured', name: 'rest-assured', version: "$restAssuredVersion"],
+           [group: 'io.rest-assured', name: 'json-schema-validator', version: "$restAssuredVersion"]
+   )
+    // https://mvnrepository.com/artifact/org.hamcrest/hamcrest-core
+    testCompile (group: 'org.hamcrest', name: 'hamcrest-core', version: '2.1')
+}
+
+test {
+    useTestNG() {
+        suites "src/test/resources/UsersSuite.xml"
+    }
+    testLogging {
+        events "PASSED", "SKIPPED", "FAILED"
+        exceptionFormat "full"
+    }
+}

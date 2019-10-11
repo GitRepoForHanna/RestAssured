@@ -1,0 +1,18 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite thread-count="3" verbose="10" name="UsersSuite" annotations="JDK" parallel="tests">
+    <test name="Header">
+        <classes>
+            <class name="api.users.HeadersScenarios"/>
+        </classes>
+    </test>
+    <test name="StatusCode">
+        <classes>
+            <class name="api.users.StatusCodeScenarios"/>
+        </classes>
+    </test>
+    <test name="ResponseBody">
+        <classes>
+            <class name="api.users.ResponseBodyScenarios"/>
+        </classes>
+    </test>
+</suite>
