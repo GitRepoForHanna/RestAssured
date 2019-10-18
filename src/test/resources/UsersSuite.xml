@@ -2,17 +2,53 @@
 <suite thread-count="3" verbose="10" name="UsersSuite" annotations="JDK" parallel="tests">
     <test name="Header">
         <classes>
-            <class name="api.users.HeadersScenarios"/>
+            <class name="api.users.rest_assured.HeadersScenarios"/>
         </classes>
     </test>
     <test name="StatusCode">
         <classes>
-            <class name="api.users.StatusCodeScenarios"/>
+            <class name="api.users.rest_assured.StatusCodeScenarios"/>
         </classes>
     </test>
     <test name="ResponseBody">
         <classes>
-            <class name="api.users.ResponseBodyScenarios"/>
+            <class name="api.users.rest_assured.ResponseBodyScenarios"/>
+        </classes>
+    </test>
+    <test name="RestTemplate">
+        <classes>
+            <class name="api.users.rest_template.StatusCodeScenarios"/>
+            <class name="api.users.rest_template.HeadersScenarios"/>
+            <class name="api.users.rest_template.ResponseBodyScenarios"/>
+        </classes>
+    </test>
+
+    <test name="ApacheHttpClient">
+        <classes>
+            <class name="api.users.http_client.StatusCodeScenarios"/>
+            <class name="api.users.http_client.HeaderScenarios"/>
+            <class name="api.users.http_client.ResponseBodyScenarios"/>
+        </classes>
+    </test>
+
+    <test name="XML_Serialisation_Deserialisation">
+        <classes>
+            <class name="api.xml_serialisation_deserialisation.XMLSerialisation"/>
+        </classes>
+    </test>
+
+    <test name="HTML_Serialisation_Deserialisation">
+        <classes>
+            <class name="api.html_serialization_deserialization.HTMLSerialization"/>
+            <class name="api.yandex.YandexByWeather"/>
+        </classes>
+    </test>
+
+    <test name="Marshaling_Demarshaling">
+        <classes>
+            <class name="api.java_object_to_json_xml_html.JSONTest"/>
+            <class name="api.java_object_to_json_xml_html.xml.XMLTest"/>
+            <class name="api.java_object_to_json_xml_html.html.HtmlTest"/>
         </classes>
     </test>
 </suite>

@@ -15,6 +15,16 @@ ext {
     log4JVersion="1.2.17"
     testNGVersion="6.14.3"
     restAssuredVersion="4.1.2"
+    hamcrestVersion="2.1"
+    springVersion="5.1.5.RELEASE"
+    jacksonVersion="2.10.0"
+    httpClientVersion="4.5.10"
+    gsonVersion="2.8.6"
+    juneauVersion="8.1.1"
+    juneauVersion="8.1.1"
+    jsoupVersion="1.12.1"
+    jsonVersion="20180813"
+    commonsIOVersion="2.6"
 }
 
 dependencies {
@@ -22,10 +32,22 @@ dependencies {
            [group: "log4j", name: "log4j", version: "$log4JVersion"],
            [group: 'org.testng', name: 'testng', version: "$testNGVersion"],
            [group: 'io.rest-assured', name: 'rest-assured', version: "$restAssuredVersion"],
-           [group: 'io.rest-assured', name: 'json-schema-validator', version: "$restAssuredVersion"]
+           [group: 'io.rest-assured', name: 'json-schema-validator', version: "$restAssuredVersion"],
+           [group: 'org.springframework', name: 'spring-web', version: "$springVersion"],
+//           [group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: "$jacksonVersion"],
+           [group: 'org.apache.httpcomponents', name: 'httpclient', version: "$httpClientVersion"],
+           [group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: "$jacksonVersion"],
+           [group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-xml', version: "$jacksonVersion"],
+           [group: 'com.google.code.gson', name: 'gson', version: "$gsonVersion"],
+           [group: 'org.apache.juneau', name: 'juneau-marshall', version: "$juneauVersion"],
+           [group: 'org.jsoup', name: 'jsoup', version: "$jsoupVersion"],
+           [group: 'org.json', name: 'json', version: "$jsonVersion"],
+           [group: 'commons-io', name: 'commons-io', version: "$commonsIOVersion"]
+
+
    )
     // https://mvnrepository.com/artifact/org.hamcrest/hamcrest-core
-    testCompile (group: 'org.hamcrest', name: 'hamcrest-core', version: '2.1')
+    testCompile (group: 'org.hamcrest', name: 'hamcrest-core', version: "$hamcrestVersion")
 }
 
 test {
